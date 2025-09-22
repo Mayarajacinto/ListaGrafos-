@@ -42,9 +42,10 @@ Em seguida, ative o ambiente de acordo com seu sistema operacional:
     Bash
 
 No macOS ou Linux:
-    ```bash
-    source venv/bin/activate
-    ```
+```
+bash
+source venv/bin/activate
+```
 
 Instale as dependências:
 
