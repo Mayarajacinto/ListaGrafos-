@@ -1,11 +1,14 @@
 # Prática 1 - Algoritmos de Caminho Mínimo
 # Autores: Abraão Melo, Mayara Jacinto e Paulo Veras
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 ## Resumo
 
-Breve descrição do projeto (1-3 parágrafos). Qual é a pergunta de pesquisa, a metodologia principal e a contribuição deste trabalho? Pense nisso como o abstract do seu artigo.
+Nesta atividade, vamos explorar o conceito de caminho mínimo utilizando algoritmos como
+Djkistra, Bellman-Ford, Floyd. A atividade foi realizada em trio, pelos discentes Abraão Melo, Mayara Jacinto e Paulo Veras.
+Exploramos três cenários de aplicação:
+Cenário 1 - Determinando a estação central.
+Cenário 2 - Otimizando caminho com regeneração
+Cenário 3: Robô de armazém com obstáculos.
 
 ## Instalação
 
