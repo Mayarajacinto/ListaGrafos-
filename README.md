@@ -17,61 +17,47 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento local.
 * Python 3.13
 * Git
 
-Passos para Instalação
+## Passos para Instalação
 
-    Clone o repositório:
-    Bash
-
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
-
+Clone o repositório:
+    ```bash
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+    cd seu-repositorio
+    ```
+    
 Crie e ative o ambiente virtual:
 
-    Primeiro, crie o ambiente na pasta do projeto:
-    Bash
-
-# Este comando cria uma pasta local chamada "venv"
-python -m venv venv
-
+Primeiro, crie o ambiente na pasta do projeto:
+Este comando cria uma pasta local chamada "venv"
+    ```bash
+    python -m venv venv
+    ```
 (Observação: Dependendo da sua configuração, talvez seja necessário usar python3).
 
 Em seguida, ative o ambiente de acordo com seu sistema operacional:
 
-    No Windows (PowerShell/CMD):
+    ```bash
+    .\venv\Scripts\activate
+    ```
     Bash
 
-.\venv\Scripts\activate
-
 No macOS ou Linux:
-Bash
-
-        source venv/bin/activate
-
+    ```bash
+    source venv/bin/activate
+    ```
 
 Instale as dependências:
 
-    Com o ambiente já ativado, instale todas as bibliotecas necessárias com um único comando:
-    Bash
-
-pip install -r requirements.txt
-
-
+Com o ambiente já ativado, instale todas as bibliotecas necessárias com um único comando:
+    ```bash
+    pip install -r requirements.txt
+    ```
+    
 ## Como Usar
 
 Para reproduzir os resultados principais do artigo, execute os scripts na seguinte ordem:
 
-1.  **Pré-processamento dos dados:**
+1.  Execução de tal
     ```bash
-    python src/01_preprocess_data.py
+    cd/cd/cd...
     ```
-
-2.  **Execução da análise principal:**
-    ```bash
-    Rscript src/02_run_analysis.R
-    ```
-
-3.  **Geração das figuras e tabelas:**
-    ```bash
-    python src/03_generate_figures.py
-    ```
-    As figuras serão salvas no diretório `/results/figures`.
