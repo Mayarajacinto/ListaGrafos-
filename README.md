@@ -20,10 +20,10 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento local.
 ## Passos para Instalação
 
 Clone o repositório:
-    ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
-    cd seu-repositorio
-    ```
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+```
     
 Crie e ative o ambiente virtual:
 
