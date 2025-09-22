@@ -29,27 +29,26 @@ Crie e ative o ambiente virtual:
 
 Primeiro, crie o ambiente na pasta do projeto:
 Este comando cria uma pasta local chamada "venv"
+
+1.  Primeiro, crie o ambiente na pasta do projeto:
+   Este comando cria uma pasta local chamada "venv"
     ```bash
     python -m venv venv
     ```
 (Observação: Dependendo da sua configuração, talvez seja necessário usar python3).
 
-Em seguida, ative o ambiente de acordo com seu sistema operacional:
-
+2. Ative o ambiente de acordo com seu sistema operacional:
     ```bash
     .\venv\Scripts\activate
     ```
-    Bash
+    No macOS ou Linux:
+    ```bash
+    source venv/bin/activate
+    ```
 
-No macOS ou Linux:
-```
-bash
-source venv/bin/activate
-```
+3. Instale as dependências:
 
-Instale as dependências:
-
-Com o ambiente já ativado, instale todas as bibliotecas necessárias com um único comando:
+    Com o ambiente já ativado, instale todas as bibliotecas necessárias com um único comando:
     ```bash
     pip install -r requirements.txt
     ```
