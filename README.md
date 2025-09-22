@@ -1,4 +1,5 @@
-# [NOME DO PROJETO / TÍTULO DO ARTIGO]
+# Prática 1 - Algoritmos de Caminho Mínimo
+# Autores: Abraão Melo Santana Duarte, Mayara Jacinto e Paulo Veras
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
