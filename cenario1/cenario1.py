@@ -1,6 +1,3 @@
-def main():
-    file = "cenario1/graph1.txt"
-
 def load_graph(file):
     try:
         """
@@ -66,4 +63,119 @@ def floyd_warshall(graph, num_vertices):
      
     return distances, routing
 
+def find_central_station(distances, num_vertices):
+    """
+    Encontrar o nó que representa a estação central escolhida
 
+    Args:
+        distances: matriz de distâncias entre os vértices
+        num_vertices: número de vértices
+    
+    Returns:
+        tupla: (estacao central,
+                vetor de distâncias da estacao central ate os demais vertices,
+                vertice mais distante da estacao central e o valor da distancia,
+                matriz de candidatos
+        )
+    """
+    INF = float('inf')
+    central_station = 1
+    distances_to_central = []
+    longer_vertex = [1, INF]
+    candidates_matrix = []
+
+    for candidate in range(1, num_vertices + 1):
+        max_distance = 0
+        distances_candidate = []
+
+        for destiny in range(1, num_vertices + 1):
+            if candidate != destiny:
+                if distances[candidate][destiny] != INF:
+                    distances_candidate.append(distances[candidate][destiny])
+                    max_distance = max(max_distance, distances[candidate][destiny])
+                else:
+                    max_distance = INF
+                    break
+        
+        candidates_matrix.append([candidate, max_distance] + distances_candidate)
+        
+        # Verifica se este candidato é melhor que o atual central_station
+        if max_distance < longer_vertex[1]:
+            central_station = candidate
+            distances_to_central = distances_candidate[:]
+            longer_vertex = [candidate, max_distance]
+    
+    # Encontra o vértice mais distante da estação central escolhida
+    if distances_to_central:
+        max_dist_from_central = max(distances_to_central)
+        # Encontra qual vértice tem essa distância máxima
+        vertex_index = 0
+        for destiny in range(1, num_vertices + 1):
+            if destiny != central_station:
+                if distances[central_station][destiny] == max_dist_from_central:
+                    longer_vertex = [destiny, max_dist_from_central]
+                    break
+                vertex_index += 1
+    
+    return (central_station, 
+            distances_to_central, 
+            longer_vertex, 
+            candidates_matrix)
+
+def main():
+    file = "cenario1/graph1.txt"
+    
+    print("=" * 60)
+    print("CENÁRIO 1: DETERMINANDO A ESTAÇÃO CENTRAL")
+    print("=" * 60)
+    print("Algoritmo utilizado: Floyd-Warshall")
+    print("Motivo: Calcula todas as distâncias mínimas entre todos os pares de vértices")
+    print()
+    
+    graph, num_vertices, num_edges = load_graph(file)
+    
+    if graph is None:
+        return
+    
+    print(f"Grafo carregado com sucesso: {num_vertices} vértices, {num_edges} arestas")
+    print("Executando algoritmo de Floyd-Warshall...")
+    distances, routing = floyd_warshall(graph, num_vertices)
+    
+    # Encontra a estação central
+    central_station, distances_to_central, longer_vertex, candidates_matrix = find_central_station(distances, num_vertices)
+    
+    print("\n" + "=" * 60)
+    print("ANÁLISE DOS CANDIDATOS:")
+    print("=" * 60)
+    
+    # Mostra análise de cada candidato
+    for line in candidates_matrix:
+        candidate = line[0]
+        dist_max = line[1]
+        distances = line[2:]
+        print(f"Vértice {candidate}: distância máxima = {dist_max}")
+        print(f"  Distâncias para outros vértices: {distances}")
+    
+    print("\n" + "=" * 60)
+    print("RESULTADOS FINAIS:")
+    print("=" * 60)
+    print(f"• Estação central escolhida: Vértice {central_station}")
+    print(f"• Vetor de distâncias da estação central: {distances_to_central}")
+    print(f"• Vértice mais distante: Vértice {longer_vertex[0]} com distância {longer_vertex[1]}")
+    
+    print(f"\nMatriz de candidatos:")
+    print("Candidato | Dist.Max | Distâncias para outros vértices")
+    print("-" * 60)
+    for line in candidates_matrix:
+        candidato = line[0]
+        dist_max = line[1]
+        distancias = line[2:]
+        print(f"    {candidato:2}    |   {dist_max:2}     | {distancias}")
+    
+    print(f"\nConclusão:")
+    print(f"O vértice {central_station} é a estação central ótima porque:")
+    print(f"- Tem a menor distância máxima ({longer_vertex[1]}) para qualquer outro vértice")
+    print(f"- Minimiza o tempo máximo de deslocamento na rede de metrô")
+
+if __name__ == "__main__":
+    main()
