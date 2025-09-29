@@ -60,7 +60,7 @@ def floyd_warshall(graph: List[List[float]], num_vertices: int) -> Tuple[List[Li
         for i in range(1, num_vertices + 1):
             for j in range(1, num_vertices + 1):
                 if distances[i][k] + distances[k][j] < distances[i][j]:
-                    distances[i][j] = distances[i][k] + distances[k][k]
+                    distances[i][j] = distances[i][k] + distances[k][j]
                     routing[i][j] = routing[i][k]
      
     return distances, routing
@@ -125,7 +125,7 @@ def find_central_station(distances: List[List[float]], num_vertices: int) -> Tup
             candidates_matrix)
 
 def main() -> None:
-    file = "cenario1/graph1.txt"
+    file = "graph1.txt"
     
     print("=" * 60)
     print("CENÁRIO 1: DETERMINANDO A ESTAÇÃO CENTRAL")
