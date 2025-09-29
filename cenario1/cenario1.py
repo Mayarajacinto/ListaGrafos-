@@ -125,7 +125,7 @@ def find_central_station(distances: List[List[float]], num_vertices: int) -> Tup
             candidates_matrix)
 
 def main() -> None:
-    file = "cenario1/graph1.txt"
+    file = "graph1.txt"
     
     print("=" * 60)
     print("CENÁRIO 1: DETERMINANDO A ESTAÇÃO CENTRAL")
