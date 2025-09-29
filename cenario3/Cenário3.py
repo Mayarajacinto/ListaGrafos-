@@ -123,21 +123,6 @@ def reconstruir_caminho(predecessor, inicio, objetivo):
     caminho.reverse()
     return caminho
         
-def imprimir_grid_com_caminho(grid, caminho):
-    
-    #copia do grid
-    grid_visual = [linha[:] for linha in grid]
-    
-    # Marcar o caminho menos S e G
-    for pos in caminho:
-        i, j = pos
-        if grid_visual[i][j] not in ['S', 'G']:
-            grid_visual[i][j] = '*'
-    
-    # Imprimir
-    for linha in grid_visual:
-        print(''.join(linha)) 
-        
 def main():
     arquivo = 'grid_example.txt'
     
