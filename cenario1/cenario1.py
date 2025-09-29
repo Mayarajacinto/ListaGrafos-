@@ -60,7 +60,7 @@ def floyd_warshall(graph: List[List[float]], num_vertices: int) -> Tuple[List[Li
         for i in range(1, num_vertices + 1):
             for j in range(1, num_vertices + 1):
                 if distances[i][k] + distances[k][j] < distances[i][j]:
-                    distances[i][j] = distances[i][k] + distances[k][k]
+                    distances[i][j] = distances[i][k] + distances[k][j]
                     routing[i][j] = routing[i][k]
      
     return distances, routing
