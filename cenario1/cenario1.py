@@ -54,7 +54,7 @@ def floyd_warshall(graph: List[List[float]], num_vertices: int) -> Tuple[List[Li
     for i in range(1, num_vertices + 1):
         for j in range(1, num_vertices + 1):
             if i != j and distances[i][j] != INF:
-                routing[i][j] = i
+                routing[i][j] = j
 
     for k in range(1, num_vertices + 1):
         for i in range(1, num_vertices + 1):
