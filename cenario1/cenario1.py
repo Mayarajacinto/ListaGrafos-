@@ -1,4 +1,6 @@
-def load_graph(file):
+from typing import List, Tuple, Optional
+
+def load_graph(file: str) -> Tuple[Optional[List[List[float]]], int, int]:
     try:
         """
         lê o arquivo;
@@ -32,7 +34,7 @@ def load_graph(file):
         print(f"Error loading graph: {e}")
         return None, 0
 
-def floyd_warshall(graph, num_vertices):
+def floyd_warshall(graph: List[List[float]], num_vertices: int) -> Tuple[List[List[float]], List[List[Optional[int]]]]:
     """
     Implementação do algoritmo de Floyd Warshall
 
@@ -63,7 +65,7 @@ def floyd_warshall(graph, num_vertices):
      
     return distances, routing
 
-def find_central_station(distances, num_vertices):
+def find_central_station(distances: List[List[float]], num_vertices: int) -> Tuple[int, List[float], List, List[List]]:
     """
     Encontrar o nó que representa a estação central escolhida
 
@@ -122,7 +124,7 @@ def find_central_station(distances, num_vertices):
             longer_vertex, 
             candidates_matrix)
 
-def main():
+def main() -> None:
     file = "cenario1/graph1.txt"
     
     print("=" * 60)
@@ -167,10 +169,10 @@ def main():
     print("Candidato | Dist.Max | Distâncias para outros vértices")
     print("-" * 60)
     for line in candidates_matrix:
-        candidato = line[0]
+        candidate = line[0]
         dist_max = line[1]
         distancias = line[2:]
-        print(f"    {candidato:2}    |   {dist_max:2}     | {distancias}")
+        print(f"    {candidate:2}    |   {dist_max:2}     | {distancias}")
     
     print(f"\nConclusão:")
     print(f"O vértice {central_station} é a estação central ótima porque:")
