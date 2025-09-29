@@ -49,5 +49,4 @@ python cenario3.py
 O algoritmo escolhido para esse cenário foi o Floyd-Warshall. O motivo dessa escolha é porque esse algoritmo calcula todas as distâncias mínimas entre todos os pares de vértices de uma só vez e permite fácil comparação de qual vértice tem a menor distância máxima para todos os outros vértices. Apesar de ter complexidade O(n³), ainda é aceitável para grafos de tamanho razoável. Outro motivo para a escolha foi a forma da saída desse algoritmo, que se dá em forma de matriz, o que facilita a vizualição.
 
 #### Comparação do código com pseudocódigo (Floyd-Warshall)
-A comparação com o pseudocódigo do cenário 1 está no PDF com nome "Comparação pseudocódigo - Cenário 1"
-
+[Comparação com pseudocódigo - Floyd Warshall](docs/cenario1.pdf)
