@@ -2,8 +2,35 @@ import sys
 
 def bellman_ford(vertices, edges, origem, destino):
     """
-    Implementa o algoritmo de Bellman-Ford para encontrar o caminho mínimo
-    em grafos com pesos negativos (regeneração de bateria).
+    Implementa o algoritmo de Bellman-Ford para encontrar o caminho mínimo.
+    
+    Este algoritmo é adequado para grafos com pesos negativos, como no caso
+    de carros elétricos com regeneração de bateria, onde trechos de descida
+    devolvem energia (pesos negativos) e trechos de subida consomem energia
+    (pesos positivos).
+    
+    Args:
+        vertices (int): Número total de vértices no grafo
+        edges (list[tuple]): Lista de arestas no formato (u, v, peso), onde:
+            - u (int): vértice de origem da aresta
+            - v (int): vértice de destino da aresta
+            - peso (int): custo da aresta (positivo=consumo, negativo=regeneração)
+        origem (int): Vértice de origem do caminho
+        destino (int): Vértice de destino do caminho
+    
+    Returns:
+        tuple: Uma tupla contendo:
+            - list[int] or None: Lista ordenada de vértices que formam o caminho,
+              ou None se não houver caminho válido
+            - int or None: Custo total do caminho (energia líquida em Wh),
+              ou None se não houver caminho válido
+            - str or None: Mensagem de erro se houver ciclo negativo ou caminho
+              inexistente, ou None se o caminho foi encontrado com sucesso
+    
+    Note:
+        - Complexidade de tempo: O(V·E)
+        - Complexidade de espaço: O(V)
+        - O algoritmo detecta ciclos negativos automaticamente
     """
     # Inicializa distâncias e predecessores
     dist = [float('inf')] * vertices
@@ -35,8 +62,26 @@ def bellman_ford(vertices, edges, origem, destino):
     
     return caminho, dist[destino], None
 
-# Leitura do grafo
+
 def ler_grafo(arquivo):
+    """
+    Lê um grafo direcionado de um arquivo de texto.
+    
+    O arquivo deve estar no formato:
+    - Primeira linha: número de vértices e número de arestas (separados por espaço)
+    - Linhas seguintes: uma aresta por linha no formato "u v peso"
+    
+    Args:
+        arquivo (str): Caminho do arquivo contendo a representação do grafo
+    
+    Returns:
+        tuple: Uma tupla contendo:
+            - int: Número de vértices no grafo
+            - list[tuple]: Lista de arestas, onde cada aresta é uma tupla (u, v, peso):
+                - u (int): vértice de origem
+                - v (int): vértice de destino
+                - peso (int): peso da aresta (pode ser negativo)
+    """
     with open(arquivo, 'r') as f:
         linhas = f.readlines()
     
@@ -61,7 +106,5 @@ caminho, custo_total, erro = bellman_ford(vertices, edges, origem, destino)
 if erro:
     print(erro)
 else:
-    print("=== RESULTADO - CAMINHO MÍNIMO ===")
     print(f"Caminho: {' -> '.join(map(str, caminho))}")
     print(f"Custo total (energia líquida): {custo_total} Wh")
-    print()
