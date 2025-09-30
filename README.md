@@ -60,6 +60,6 @@ O algoritmo escolhido para esse cenário foi o Bellman-Ford. O principal motivo 
 ##
 
 ### Cenário 3 - Robô de armazém com obstáculos
-O algoritmo escolhido para esse cenário foi o XXXX.
+O algoritmo escolhido para esse cenário foi o Dijkstra.
 
-#### [Comparação com pseudocódigo - XXXX](docs/comparacao3.pdf)
+#### [Comparação com pseudocódigo - Dijkstra](docs/comparacao3.pdf)
