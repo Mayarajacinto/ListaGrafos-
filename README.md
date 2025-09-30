@@ -60,6 +60,6 @@ O algoritmo escolhido para esse cenário foi o Bellman-Ford. O principal motivo 
 ##
 
 ### Cenário 3 - Robô de armazém com obstáculos
-O algoritmo escolhido para esse cenário foi o Dijkstra.
+O algoritmo escolhido para esse cenário foi o Dijkstra. O motivo principal é que esse algoritmo é ideal para encontrar o caminho mínimo em grafos com pesos não-negativos, que é o caso desse cenário, onde todos os custos são positivos (custo 1 para corredores livres e custo 3 para piso difícil). O Dijkstra garante encontrar o caminho ótimo do inicio (S) até o objetivo (G). Na implementação com fila de prioridade a complexidade é de O(V²), mas usando fila de prioridade (heap) a complexidade se reduz para O((V + E) log V), tornando-o eficiente para grids de tamanho razoável. Outro motivo para a escolha foi a facilidade de adaptação do algoritmo para trabalhar com estruturas de grid, onde cada célula representa um vértice e as conexões entre células adjacentes (4 direções) representam as arestas.
 
 #### [Comparação com pseudocódigo - Dijkstra](docs/comparacao3.pdf)
