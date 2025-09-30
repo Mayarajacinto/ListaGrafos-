@@ -34,7 +34,7 @@ def obter_custo(celula):
     return float('inf')
 
 """
-    O pseudocodigo foi implemnetado aq 
+    O pseudocodigo foi implemnetado aqui 
     -> inicializa o dist[V]: infinito para todos, menos para a origem que é 0
     -> inicializa o conjunto S para vertices visitados 
     -> inicializa a fila de prioridade Q com todos os vertices 
