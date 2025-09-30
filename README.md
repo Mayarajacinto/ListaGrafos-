@@ -21,8 +21,8 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento local.
 
 Clone o repositório:
 ```bash
-git clone https://github.com/Mayarajacinto/ListaGrafos-.git
-cd ListaGrafos-
+git clone https://github.com/Mayarajacinto/PraticaGrafos.git
+cd PraticaGrafos
 ```
     
 ## Como Compilar
