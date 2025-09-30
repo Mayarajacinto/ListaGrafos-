@@ -31,18 +31,21 @@ Para testar o cenário 1:
 ```bash
 cd .\cenario1 # ir ao diretório do cenário 1
 python cenario1.py
+cd .. # volta para o diretório principal após o teste
 ```
 
 Para testar o cenário 2:
 ```bash
 cd .\cenario2 # ir ao diretório do cenário 2
 python cenario2.py
+cd .. # volta para o diretório principal após o teste
 ```
 
 Para testar o cenário 3:
 ```bash
 cd .\cenario3 # ir ao diretório do cenário 3
 python cenario3.py
+cd .. # volta para o diretório principal após o teste
 ```
 ## Escolha dos algoritmos
 ### Cenário 1 - Determinando a estação central
