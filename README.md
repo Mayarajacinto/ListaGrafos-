@@ -48,5 +48,18 @@ python cenario3.py
 ### Cenário 1 - Determinando a estação central
 O algoritmo escolhido para esse cenário foi o Floyd-Warshall. O motivo dessa escolha é porque esse algoritmo calcula todas as distâncias mínimas entre todos os pares de vértices de uma só vez e permite fácil comparação de qual vértice tem a menor distância máxima para todos os outros vértices. Apesar de ter complexidade O(n³), ainda é aceitável para grafos de tamanho razoável. Outro motivo para a escolha foi a forma da saída desse algoritmo, que se dá em forma de matriz, o que facilita a vizualição.
 
-#### Comparação do código com pseudocódigo (Floyd-Warshall)
-[Comparação com pseudocódigo - Floyd Warshall](docs/comparacao1.pdf)
+#### [Comparação com pseudocódigo - Floyd Warshall](docs/comparacao1.pdf)
+
+##
+
+### Cenário 2 - Otimizando caminho com regeneração
+O algoritmo escolhido para esse cenário foi o Bellman-Ford. O principal motivo dessa escolha foi que o algorítmo foi feito para lidar com pesos negativos. O algorítimo Floyd-Warshall também lida com pesos negativos, mas ele calcula todos os caminhos mínimos entre os pares de vértices, retornando uma matriz V×V com todas as distâncias. Isso implica em sua complexidade, que se dá por O(V³), enquanto o Bellman-Ford se dá por O(V·E). Em grafos esparsos (onde E ≈ V), o Bellman-Ford se torna O(V²), sendo significativamente mais eficiente que o Floyd-Warshall.
+
+#### [Comparação com pseudocódigo - Bellman-Ford](docs/comparacao2.pdf)
+
+##
+
+### Cenário 3 - Robô de armazém com obstáculos
+O algoritmo escolhido para esse cenário foi o XXXX.
+
+#### [Comparação com pseudocódigo - XXXX](docs/comparacao3.pdf)
